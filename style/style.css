@@ -1,0 +1,471 @@
+:root {
+  --theme-color-blue: #2b6eb4;
+  --theme-color-pink: #ef6191;
+  --theme-color-yellow: #f99d1c;
+  --theme-color-green: #226a51;
+  --theme-color-orange: #f15a22;
+  --theme-color-navy: #004278;
+  --theme-color--purple: #7e4177;
+  
+  --font-colors: rgba(34, 33, 33, 0.901);
+  
+  --delay-time: 2.5s;
+}
+
+body {
+  width: 100%;
+  /*height: 100%;*/
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+#root {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  /*display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;*/
+}
+
+.dots_container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 0;
+}
+
+main {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* height: 120vh; */
+  height: 100vh;
+  margin-top: 8%;
+/*   border-bottom: 1px solid gray; */
+  background: white;
+  /*position: relative;*/
+  padding: 0 250px 0;
+}
+
+.container {
+  margin: auto;
+  width: 100%;
+  height: 60vh;
+  min-width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 10px;
+  align-items: center;
+  font-family: 'Slabo 27px', serif;
+  font-size: 68px;
+  letter-spacing: 0.05rem;
+  color: var(--font-colors);
+  /* filter: blur(0.5px); */
+  background: white;
+  z-index: 10;
+}
+
+#thinking {
+  color: var(--theme-color-blue);
+  font-family: 'Roboto', sans-serif;
+}
+
+#research\, {
+  color: var(--theme-color-pink);
+  font-family: 'Roboto', sans-serif;
+}
+
+#Natural-Machines {
+  color: var(--theme-color-green);
+  font-family: 'Roboto', sans-serif;
+}
+#world-changers {
+  color: var(--theme-color-orange);
+  font-family: 'Roboto', sans-serif;
+}
+#rules\. {
+  color: var(--theme-color-yellow);
+  font-family: 'Roboto', sans-serif;
+}
+
+.even,
+.odd,
+.highlighted {
+  animation: slide;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  animation-delay: 2.5s;
+}
+
+.even {
+  animation-duration: 1.5s;
+}
+
+.odd {
+  animation-duration: 2.5s;
+}
+
+.highlighted {
+  animation-duration: 1s;
+}
+
+@keyframes slide {
+  0%,
+  50% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  70%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.re {
+  position: relative;
+}
+
+.dot {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  right: -15px;
+  top: 10px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.6s;
+  opacity: 0;
+  animation-name: anim;
+  animation-duration: 1s;
+  animation-delay: 5.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes anim{
+  to {
+    opacity: 1;
+  }
+}
+
+#thinking span {
+  background-color: var(--theme-color-blue);
+}
+
+[id*="research,"] span {
+  background-color: var(--theme-color-pink);
+}
+
+[id*="rules."] span {
+  background-color: var(--theme-color-yellow);
+}
+
+[id*="Natural-Machines"] span {
+  background-color: var(--theme-color-green);
+}
+
+[id*="world-changers"] span {
+  background-color: var(--theme-color-orange);
+}
+
+#thinking span::before {
+  opacity: 0.3;
+  height: 30px;
+  width: 30px;
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: var(--theme-color-blue);
+  border-radius: 50%;
+  /* transform: translate(-50%, -50%); */
+
+  animation-name: dot;
+  animation-delay: 5.5s;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+[id*="research,"] span::before {
+  opacity: 0.3;
+  height: 30px;
+  width: 30px;
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: var(--theme-color-pink);
+  border-radius: 50%;
+  animation-name: dot;
+  animation-delay: 5.5s;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+[id*="rules."] span::before {
+  opacity: 0.3;
+  height: 30px;
+  width: 30px;
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: var(--theme-color-yellow);
+  border-radius: 50%;
+  animation-name: dot;
+  animation-delay: 5.5s;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+[id*="Natural-Machines"] span::before {
+  opacity: 0.3;
+  height: 30px;
+  width: 30px;
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: var(--theme-color-green);
+  border-radius: 50%;
+  animation-name: dot;
+  animation-delay: 5.5s;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+[id*="world-changers"] span::before {
+  opacity: 0.3;
+  height: 30px;
+  width: 30px;
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: var(--theme-color-orange);
+  border-radius: 50%;
+  animation-name: dot;
+  animation-delay: 5.5s;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes dot {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(3);
+  }
+}
+
+hr {
+  margin-left: 5%;
+  width: 90%;
+  height: 1px;
+  background-color: black;
+}
+
+footer {
+  width: 100%;
+  height: 25vh;
+  padding-top: 20px;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.05rem;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  z-index: -10;
+}
+
+.main-footer-container {
+  height: 25vh;
+  width: 100%;
+  margin-left: 5%;
+  margin-right: 5%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-end;
+
+  position: sticky;
+  z-index: -15;
+}
+
+.first-sub-container {
+  height: 5vh;
+  width: 100%;
+  font-size: x-large;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.box {
+  margin: auto;
+  height: 20%;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  gap: 3%;
+  flex-wrap: wrap;
+}
+
+.social {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+.second-sub-container {
+  padding-top: 2.5%;
+  margin-bottom: 2%;
+  height: 5vh;
+  width: 100%;
+  font-size: small;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.privacy {
+  gap: 3%;
+}
+
+.by {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+@keyframes shake {
+  0% {
+    transform: matrix(1, 0, 0, 1, 1, 2);
+  }
+  10% {
+    transform: matrix(1, 0, 0, 1, 1, 2);
+  }
+  20% {
+    transform: matrix(1, 0, 0, 1, 1, 2);
+  }
+  30% {
+    transform: matrix(1, 0, 0, 1, 1, 2);
+  }
+  40% {
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+  50% {
+    transform: matrix(1, 0, 0, 1, 1, 2);
+  }
+  60% {
+    transform: matrix(1, 0, 0, 1, 3, 1);
+  }
+  70% {
+    transform: matrix(1, 0, 0, 1, 1, 2);
+  }
+  80% {
+    transform: matrix(1, 0, 0, 1, 1, 2);
+  }
+  90% {
+    transform: matrix(1, 0, 0, 1, 1, 2);
+  }
+  100% {
+    transform: matrix(1, 0, 0, 1, 2, 1);
+  }
+}
+
+.movedot {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  /* top: 50%;
+  left: 50%; */
+
+  transition: transform 2.5s;
+
+  animation-name: hidedots;
+  animation-delay: var(--delay-time);
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  z-index: 6;
+}
+
+.yellow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: var(--theme-color-yellow);
+}
+
+.purple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: var(--theme-color--purple);
+}
+.blue {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: var(--theme-color-blue);
+}
+.green {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: var(--theme-color-green);
+}
+.pink {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: var(--theme-color-pink);
+}
+.navy {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: var(--theme-color-navy);
+}
+.orange {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: var(--theme-color-orange);
+}
+
+@keyframes hidedots {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  .container {
+    font-size: 60px;
+  }
+}
+
+.link:hover {
+  cursor: pointer;
+}

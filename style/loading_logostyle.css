@@ -1,0 +1,85 @@
+:root {
+  --main-bg-color: rgb(255, 255, 255);
+
+  --steel: #313c49;
+  --navy: #004278;
+  --pink: #ef6191;
+  --orange: #f15a22;
+  --purple: #7e4177;
+  --yellow: #f99d1c;
+  --blue: #2b6eb4;
+  --green: #226a51;
+}
+
+.load-logo {
+  height: 10vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-duration: 4.1s;
+  animation-name: action;
+}
+
+@keyframes action {
+  from {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 50;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.logo-line {
+  fill: none;
+  stroke: black;
+  stroke-width: 2;
+}
+
+.logo-dots:nth-child(2) {
+  fill: var(--navy);
+}
+
+.logo-dots:nth-child(3) {
+  fill: var(--pink);
+}
+
+.logo-dots:nth-child(4) {
+  fill: var(--orange);
+}
+
+.logo-dots:nth-child(5) {
+  fill: var(--purple);
+}
+
+.logo-dots:nth-child(6) {
+  fill: var(--yellow);
+}
+
+.logo-dots:nth-child(7) {
+  fill: var(--blue);
+}
+
+.logo-dots:nth-child(8) {
+  fill: var(--green);
+}
+
+.logo-letters {
+  fill: none;
+  stroke: var(--main-bg-color);
+  stroke-width: 2;
+  border: none;
+}
+
+#preloader {
+  background: #ffffff no-repeat center center;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}

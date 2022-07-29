@@ -1,0 +1,117 @@
+:root {
+  --main-bg-color: rgb(255, 255, 255);
+
+  --steel: #313c49;
+  --navy: #004278;
+  --pink: #ef6191;
+  --orange: #f15a22;
+  --purple: #7e4177;
+  --yellow: #f99d1c;
+  --blue: #2b6eb4;
+  --green: #226a51;
+  --grey: #53555315;
+}
+
+.frame {
+  padding-left: 65px;
+  padding-right: 65px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  font-weight: 600;
+
+  opacity: 0;
+
+  position: relative;
+
+  animation: showUp ease-in-out 1.5s;
+  animation-delay: 4s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes showUp {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.logo-line {
+  fill: none;
+  stroke: black;
+  stroke-width: 2;
+}
+
+.logo-letters {
+  fill: none;
+  stroke: var(--main-bg-color);
+  stroke-width: 3;
+}
+
+.logo-dots:nth-child(2) {
+  fill: var(--navy);
+}
+.logo-dots::nth-child(3) {
+  fill: var(--pink);
+}
+.logo-dots::nth-child(4) {
+  fill: var(--orange);
+}
+.logo-dots::nth-child(5) {
+  fill: var(--purple);
+}
+.logo-dots::nth-child(6) {
+  fill: var(--yellow);
+}
+.logo-dots::nth-child(7) {
+  fill: var(--blue);
+}
+.logo-dots::nth-child(8) {
+  fill: var(--green);
+}
+
+.logo-text {
+  width: 200px;
+
+  color: var(--steel);
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: xx-small;
+  font-weight: 800;
+
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: -20px;
+}
+
+.menu-btn {
+  height: 50px;
+  width: 100px;
+
+  border: none;
+  border-radius: 30px;
+  background-color: var(--grey);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--steel);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+button {
+  position: fixed;
+  left: 88%;
+  z-index: 1000;
+}
